@@ -19,10 +19,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-* {
-  border-color: var(--border);
-}
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
