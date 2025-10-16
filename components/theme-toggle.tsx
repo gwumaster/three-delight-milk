@@ -28,10 +28,10 @@ export const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={handleToggle}
-      className="flex flex-col justify-center p-2 rounded-md cursor-pointer transition-colors ml-auto border-2 border-foreground"
+      className="flex flex-col justify-center p-2 rounded-md cursor-pointer transition-colors ml-auto border-2 border-foreground/40 m-8"
       aria-label="Toggle theme"
     >
-      {resolvedTheme === "dark" ? <FiSun size={18} /> : <FiMoon size={18} />}
+      {resolvedTheme === "dark" ? <FiSun size={20} /> : <FiMoon size={20} />}
     </button>
   );
 };

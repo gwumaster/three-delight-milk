@@ -2,12 +2,12 @@
 
 :root {
   --background: #cfecf7;
-  --foreground: #184c62;
+  --foreground: #1c96c5;
 }
 
 .dark {
-  --background: #184c62;
-  --foreground: #cfecf7;
+  --background: #0e2a3e;
+  --foreground: #aee3f3;
 }
 
 @theme inline {
@@ -16,13 +16,13 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Ensure smooth theme transitions */
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
@@ -33,4 +33,30 @@ html {
   .text-code {
     @apply bg-foreground/30 rounded px-1 py-0.5 font-mono font-semibold;
   }
+
+  .bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0C22.4 0 0 22.4 0 50s22.4 50 50 50 50-22.4 50-50S77.6 0 50 0zm0 90C27.4 90 10 72.6 10 50S27.4 10 50 10s40 17.4 40 40-17.4 40-40 40z' fill='var(--foreground)' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.stage-item {
+  will-change: transform, opacity;
 }
