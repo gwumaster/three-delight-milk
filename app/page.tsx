@@ -1,13 +1,21 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ThemeToggle } from '@/components/theme-toggle';
-import { FaGlassWhiskey, FaBox, FaCalendarAlt, FaDollarSign, FaUsers, FaClock, FaCheckCircle } from 'react-icons/fa';
-import { GiMilkCarton, GiCow } from 'react-icons/gi';
-import Image from 'next/image';
-import { TbBikeFilled } from 'react-icons/tb';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ThemeToggle } from "@/components/theme-toggle";
+import {
+  FaGlassWhiskey,
+  FaBox,
+  FaCalendarAlt,
+  FaDollarSign,
+  FaUsers,
+  FaClock,
+  FaCheckCircle,
+} from "react-icons/fa";
+import { GiMilkCarton, GiCow } from "react-icons/gi";
+import Image from "next/image";
+import { TbBikeFilled } from "react-icons/tb";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,24 +27,43 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: timelineRef.current,
-          start: 'top top',
-          end: '+=3000',
+          start: "top top",
+          end: "+=3000",
           scrub: 1,
           pin: true,
           anticipatePin: 1,
-        }
+        },
       });
 
-      tl.fromTo('.bottle-stage', { opacity: 0, x: 300, scale: 0.3, rotation: -180 }, { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: 'power2.out' })
-        .fromTo('.packing-stage', { opacity: 0, x: 300, scale: 0.3, rotation: -180 }, { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: 'power2.out' }, '-=1.5')
-        .fromTo('.truck-stage', { opacity: 0, x: 300, scale: 0.3, rotation: -180 }, { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: 'power2.out' }, '-=1.5')
-        .fromTo('.cow-stage', { opacity: 0, x: 300, scale: 0.3, rotation: -180 }, { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: 'power2.out' }, '-=1.5');
+      tl.fromTo(
+        ".bottle-stage",
+        { opacity: 0, x: 300, scale: 0.3, rotation: -180 },
+        { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: "power2.out" }
+      )
+        .fromTo(
+          ".packing-stage",
+          { opacity: 0, x: 300, scale: 0.3, rotation: -180 },
+          { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: "power2.out" },
+          "-=1.5"
+        )
+        .fromTo(
+          ".truck-stage",
+          { opacity: 0, x: 300, scale: 0.3, rotation: -180 },
+          { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: "power2.out" },
+          "-=1.5"
+        )
+        .fromTo(
+          ".cow-stage",
+          { opacity: 0, x: 300, scale: 0.3, rotation: -180 },
+          { opacity: 1, x: 0, scale: 1, rotation: 0, duration: 2, ease: "power2.out" },
+          "-=1.5"
+        );
 
-      gsap.to('.stage-item', {
-        y: '+=10',
+      gsap.to(".stage-item", {
+        y: "+=10",
         repeat: -1,
         yoyo: true,
-        ease: 'sine.inOut',
+        ease: "sine.inOut",
         duration: 2,
         stagger: 0.5,
       });
@@ -49,19 +76,19 @@ export default function Home() {
     <>
       <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         <ThemeToggle />
-        
+
         {/* Hero Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-pattern opacity-10 transform scale-150"></div>
           <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
-              <Image 
-                className="w-96" 
-                src="/logo.png" 
-                alt="3 Delight Milk" 
-                width={384} 
-                height={384} 
-                priority 
+              <Image
+                className="w-96"
+                src="/logo.png"
+                alt="3 Delight Milk"
+                width={384}
+                height={384}
+                priority
               />
             </div>
             <p className="text-xl md:text-2xl mb-8 text-foreground/80">
@@ -69,7 +96,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button className="bg-foreground text-background px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform flex items-center gap-2 shadow-lg">
-                <TbBikeFilled  className="w-5 h-5" />
+                <TbBikeFilled className="w-5 h-5" />
                 Start Delivery
               </button>
               <button className="border-2 border-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground hover:text-background transition-all shadow-lg">
@@ -96,12 +123,20 @@ export default function Home() {
 
         {/* Scroll Timeline Section */}
         <section ref={timelineRef} className="relative h-screen bg-foreground/40 overflow-hidden">
-          <div className="absolute top-10 left-10 text-3xl font-bold text-foreground/70">Trace Back Our Fresh Journey</div>
+          <div className="absolute top-10 left-10 text-3xl font-bold text-foreground/70">
+            Trace Back Our Fresh Journey
+          </div>
           <div className="flex items-center justify-around h-full px-10 relative">
             <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              <path d="M 20% 50% Q 40% 30%, 50% 50% T 80% 50%" fill="none" stroke="var(--foreground)" strokeWidth="4" strokeOpacity="0.2" />
+              <path
+                d="M 20% 50% Q 40% 30%, 50% 50% T 80% 50%"
+                fill="none"
+                stroke="var(--foreground)"
+                strokeWidth="4"
+                strokeOpacity="0.2"
+              />
             </svg>
-            
+
             {/* Stage 1: Bottle */}
             <div className="bottle-stage stage-item text-center opacity-0 relative z-10">
               <div className="relative mb-6 group">
@@ -113,9 +148,15 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-2">Premium Glass Bottles</h3>
               <p className="text-foreground/70">Sustainable & reusable</p>
               <div className="mt-4 flex justify-center gap-2">
-                <div className="bg-foreground/10 px-4 py-2 rounded-full text-sm animate-pulse">1L</div>
-                <div className="bg-foreground/10 px-4 py-2 rounded-full text-sm animate-pulse delay-150">1/2L</div>
-                <div className="bg-foreground/10 px-4 py-2 rounded-full text-sm animate-pulse delay-300">1/4L</div>
+                <div className="bg-foreground/10 px-4 py-2 rounded-full text-sm animate-pulse">
+                  1L
+                </div>
+                <div className="bg-foreground/10 px-4 py-2 rounded-full text-sm animate-pulse delay-150">
+                  1/2L
+                </div>
+                <div className="bg-foreground/10 px-4 py-2 rounded-full text-sm animate-pulse delay-300">
+                  1/4L
+                </div>
               </div>
             </div>
 
@@ -151,7 +192,9 @@ export default function Home() {
         {/* Plans Section */}
         <section className="py-40 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fadeIn">Flexible Plans for You</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 animate-fadeIn">
+              Flexible Plans for You
+            </h2>
             <p className="text-center text-foreground/70 mb-12 max-w-2xl mx-auto">
               Monthly, yearly savings, or buy daily - with free trial week
             </p>
@@ -164,9 +207,15 @@ export default function Home() {
                 </div>
                 <p className="text-3xl font-bold mb-4">Pay As You Go</p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Order anytime</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Zero commitment</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Instant delivery</li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Order anytime
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Zero commitment
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Instant delivery
+                  </li>
                 </ul>
                 <button className="w-full bg-foreground text-background py-3 rounded-full font-semibold hover:opacity-90 transition">
                   Buy Today
@@ -175,17 +224,27 @@ export default function Home() {
 
               {/* Monthly Plan */}
               <div className="border-2 border-foreground rounded-2xl p-8 scale-105 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-foreground text-background text-sm px-4 py-1 rounded-bl-2xl">Popular</div>
+                <div className="absolute top-0 right-0 bg-foreground text-background text-sm px-4 py-1 rounded-bl-2xl">
+                  Popular
+                </div>
                 <div className="flex items-center gap-3 mb-6">
                   <FaCalendarAlt className="w-8 h-8 text-foreground" />
                   <h3 className="text-2xl font-bold">Monthly Plan</h3>
                 </div>
                 <p className="text-3xl font-bold mb-4">Save 15%</p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Daily supply</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Free week trial</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Easy pause</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Support priority</li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Daily supply
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Free week trial
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Easy pause
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Support priority
+                  </li>
                 </ul>
                 <button className="w-full bg-foreground text-background py-3 rounded-full font-semibold hover:opacity-90 transition">
                   Subscribe Now
@@ -200,10 +259,18 @@ export default function Home() {
                 </div>
                 <p className="text-3xl font-bold mb-4">Save 25%</p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Maximum savings</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Free trial week</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> Bonus bottles</li>
-                  <li className="flex items-center gap-2"><FaCheckCircle className="w-5 h-5 text-foreground" /> VIP service</li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Maximum savings
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Free trial week
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> Bonus bottles
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaCheckCircle className="w-5 h-5 text-foreground" /> VIP service
+                  </li>
                 </ul>
                 <button className="w-full bg-foreground text-background py-3 rounded-full font-semibold hover:opacity-90 transition">
                   Annual Subscribe
@@ -216,7 +283,9 @@ export default function Home() {
         {/* Features Section */}
         <section className="py-24 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">What Makes Us Special</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
+              What Makes Us Special
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center group">
                 <div className="bg-foreground w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg transition-transform group-hover:scale-125">
@@ -227,7 +296,7 @@ export default function Home() {
               </div>
               <div className="text-center group">
                 <div className="bg-foreground w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg transition-transform group-hover:scale-125">
-                  <TbBikeFilled  className="w-10 h-10 text-background" />
+                  <TbBikeFilled className="w-10 h-10 text-background" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Every Morning Delivery</h3>
                 <p className="text-foreground/70">Reliable & fresh</p>
@@ -253,12 +322,14 @@ export default function Home() {
         {/* CTA Section */}
         <section className="py-24 px-6">
           <div className="max-w-4xl mx-auto text-center text-foreground">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Begin Your Delightful Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Begin Your Delightful Experience
+            </h2>
             <p className="text-xl mb-8">Enjoy free delivery for the entire first week!</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <input 
-                type="tel" 
-                placeholder="Your phone number" 
+              <input
+                type="tel"
+                placeholder="Your phone number"
                 className="px-6 py-4 rounded-full text-foreground bg-background w-full border-2 border-foreground/40 md:w-64 focus:outline-none focus:ring-4 focus:ring-foreground/50"
               />
               <button className="bg-foreground text-background px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform shadow-lg">
@@ -275,11 +346,19 @@ export default function Home() {
             <h3 className="text-2xl font-bold mb-4">3 Delight Milk</h3>
             <p className="mb-6">Daily fresh milk in glass bottles, delivered with joy</p>
             <div className="flex justify-center gap-6 text-sm mb-4">
-              <a href="#" className="hover:underline">Privacy</a>
-              <a href="#" className="hover:underline">Terms</a>
-              <a href="#" className="hover:underline">Contact</a>
+              <a href="#" className="hover:underline">
+                Privacy
+              </a>
+              <a href="#" className="hover:underline">
+                Terms
+              </a>
+              <a href="#" className="hover:underline">
+                Contact
+              </a>
             </div>
-            <p className="text-foreground/70">© 2025 3 Delight Milk. Pure happiness in every sip.</p>
+            <p className="text-foreground/70">
+              © 2025 3 Delight Milk. Pure happiness in every sip.
+            </p>
           </div>
         </footer>
       </div>
