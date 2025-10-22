@@ -9,7 +9,6 @@ import {
   FaGlassWhiskey,
   FaBox,
   FaCalendarAlt,
-  FaDollarSign,
   FaUsers,
   FaClock,
   FaCheckCircle,
@@ -17,6 +16,7 @@ import {
 import { GiMilkCarton, GiCow } from "react-icons/gi";
 import Image from "next/image";
 import { TbBikeFilled } from "react-icons/tb";
+import { FaIndianRupeeSign } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -254,7 +254,7 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="border-2 border-foreground/20 rounded-2xl p-8 hover:border-foreground/50 transition-all hover:scale-105 hover:shadow-2xl group">
                   <div className="flex items-center gap-3 mb-6">
-                    <FaDollarSign className="w-8 h-8 text-foreground group-hover:rotate-180 transition-transform" />
+                    <FaIndianRupeeSign className="w-8 h-8 text-foreground group-hover:rotate-180 transition-transform" />
                     <h3 className="text-2xl font-bold">Daily Purchase</h3>
                   </div>
                   <p className="text-3xl font-bold mb-4">₹50 per litre</p>
@@ -344,7 +344,7 @@ export default function Home() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="border-2 border-foreground/20 rounded-2xl p-8 hover:border-foreground/50 transition-all hover:scale-105 hover:shadow-2xl group">
                   <div className="flex items-center gap-3 mb-6">
-                    <FaDollarSign className="w-8 h-8 text-foreground group-hover:rotate-180 transition-transform" />
+                    <FaIndianRupeeSign className="w-8 h-8 text-foreground group-hover:rotate-180 transition-transform" />
                     <h3 className="text-2xl font-bold">Earn Per Delivery</h3>
                   </div>
                   <p className="text-3xl font-bold mb-4">₹20-50 per delivery</p>
@@ -433,7 +433,7 @@ export default function Home() {
                   {mode === "ordering" ? (
                     <GiMilkCarton className="w-10 h-10 text-background" />
                   ) : (
-                    <FaDollarSign className="w-10 h-10 text-background" />
+                    <FaIndianRupeeSign className="w-10 h-10 text-background" />
                   )}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">
