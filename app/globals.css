@@ -3,16 +3,30 @@
 :root {
   --background: #cfecf7;
   --foreground: #1c96c5;
+  --accent: #f7e7cf;
+  --surface: #c5811c;
 }
 
 .dark {
   --background: #0e2a3e;
   --foreground: #aee3f3;
+  --accent: #3e2c0e;
+  --surface: #f3ceae;
+}
+
+.ordering {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+.delivering {
+  --color-background: var(--accent);
+  --color-foreground: var(--surface);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
 }
 
 body {
