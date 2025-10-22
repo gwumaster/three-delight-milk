@@ -25,6 +25,7 @@ export default function Home() {
   const [mode, setMode] = useState<"ordering" | "delivering">("ordering");
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [deliveryName, setDeliveryName] = useState("");
 
   // Indian phone number validation (+91 followed by 10 digits)
   const validatePhone = (value: string) => {
@@ -502,8 +503,14 @@ export default function Home() {
                 <input
                   type={mode === "ordering" ? "tel" : "text"}
                   placeholder={mode === "ordering" ? "Your phone number (+91)" : "Your name"}
-                  value={mode === "ordering" ? phone : undefined}
-                  onChange={mode === "ordering" ? handlePhoneChange : undefined}
+                  value={mode === "ordering" ? phone : deliveryName}
+                  onChange={(e) => {
+                    if (mode === "ordering") {
+                      handlePhoneChange(e);
+                    } else {
+                      setDeliveryName(e.target.value);
+                    }
+                  }}
                   className="px-6 py-4 rounded-full text-foreground bg-background w-full border-2 border-foreground/40 focus:outline-none focus:ring-4 focus:ring-foreground/50"
                 />
                 {phoneError && mode === "ordering" && (
