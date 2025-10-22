@@ -121,8 +121,8 @@ export default function Home() {
             </div>
             <p className="text-xl md:text-2xl mb-8 text-foreground/80">
               {mode === "ordering"
-                ? "Fresh, pure milk delivered daily in eco-friendly glass bottles across Anantapur"
-                : "Join our team to deliver fresh milk to happy customers in India"}
+                ? "Fresh, pure milk delivered daily in eco-friendly glass bottles across Anantapur, India"
+                : "Join our team to deliver fresh milk to happy customers in Anantapur, India"}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <button className="bg-foreground text-background px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transition-transform flex items-center gap-2 shadow-lg">
