@@ -126,7 +126,7 @@ export default function Home() {
           <div className="absolute top-10 left-10 text-3xl font-bold text-foreground/70">
             Trace Back Our Fresh Journey
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 h-full px-2 sm:px-4 relative items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 h-full px-1 sm:px-10 relative items-center">
             <svg className="absolute inset-0 w-full h-full pointer-events-none">
               <path
                 d="M 20% 50% Q 40% 30%, 50% 50% T 80% 50%"
@@ -139,22 +139,22 @@ export default function Home() {
 
             {/* Stage 1: Bottle */}
             <div className="bottle-stage stage-item text-center opacity-0 relative z-10">
-              <div className="relative mb-2 group">
-                <FaGlassWhiskey className="w-16 h-16 mx-auto text-foreground transition-transform group-hover:rotate-12" />
+              <div className="relative mb-6 group">
+                <FaGlassWhiskey className="w-24 sm:w-32 h-24 sm:h-32 mx-auto text-foreground transition-transform group-hover:rotate-12" />
                 <div className="absolute inset-0 animate-ping opacity-75">
-                  <FaGlassWhiskey className="w-16 h-16 mx-auto text-foreground/50" />
+                  <FaGlassWhiskey className="w-24 sm:w-32 h-24 sm:h-32 mx-auto text-foreground/50" />
                 </div>
               </div>
-              <h3 className="text-lg font-bold mb-1">Premium Glass Bottles</h3>
-              <p className="text-foreground/70 text-xs">Sustainable & reusable</p>
-              <div className="mt-2 flex justify-center gap-1">
-                <div className="bg-foreground/10 px-2 py-1 rounded-full text-xs animate-pulse">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">Premium Glass Bottles</h3>
+              <p className="text-foreground/70 text-sm sm:text-base">Sustainable & reusable</p>
+              <div className="mt-4 flex justify-center gap-2">
+                <div className="bg-foreground/10 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm animate-pulse">
                   1L
                 </div>
-                <div className="bg-foreground/10 px-2 py-1 rounded-full text-xs animate-pulse delay-150">
+                <div className="bg-foreground/10 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm animate-pulse delay-150">
                   1/2L
                 </div>
-                <div className="bg-foreground/10 px-2 py-1 rounded-full text-xs animate-pulse delay-300">
+                <div className="bg-foreground/10 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm animate-pulse delay-300">
                   1/4L
                 </div>
               </div>
@@ -162,29 +162,29 @@ export default function Home() {
 
             {/* Stage 2: Packing */}
             <div className="packing-stage stage-item text-center opacity-0 relative z-10">
-              <div className="relative mb-2 group">
-                <FaBox className="w-16 h-16 mx-auto text-foreground transition-transform group-hover:scale-110" />
+              <div className="relative mb-6 group">
+                <FaBox className="w-24 sm:w-32 h-24 sm:h-32 mx-auto text-foreground transition-transform group-hover:scale-110" />
               </div>
-              <h3 className="text-lg font-bold mb-1">Hygienic Packing</h3>
-              <p className="text-foreground/70 text-xs">Sealed with care</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">Hygienic Packing</h3>
+              <p className="text-foreground/70 text-sm sm:text-base">Sealed with care</p>
             </div>
 
             {/* Stage 3: Truck/Delivery */}
             <div className="truck-stage stage-item text-center opacity-0 relative z-10">
-              <div className="relative mb-2 group">
-                <TbBikeFilled className="w-16 h-16 mx-auto text-foreground transition-transform group-hover:translate-x-4" />
+              <div className="relative mb-6 group">
+                <TbBikeFilled className="w-24 sm:w-32 h-24 sm:h-32 mx-auto text-foreground transition-transform group-hover:translate-x-4" />
               </div>
-              <h3 className="text-lg font-bold mb-1">Doorstep Delivery</h3>
-              <p className="text-foreground/70 text-xs">Free first week trial</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">Doorstep Delivery</h3>
+              <p className="text-foreground/70 text-sm sm:text-base">Free first week trial</p>
             </div>
 
             {/* Stage 4: Cow/Farm */}
             <div className="cow-stage stage-item text-center opacity-0 relative z-10">
-              <div className="relative mb-2 group">
-                <GiCow className="w-16 h-16 mx-auto text-foreground transition-transform group-hover:rotate-6" />
+              <div className="relative mb-6 group">
+                <GiCow className="w-24 sm:w-32 h-24 sm:h-32 mx-auto text-foreground transition-transform group-hover:rotate-6" />
               </div>
-              <h3 className="text-lg font-bold mb-1">Farm Fresh Source</h3>
-              <p className="text-foreground/70 text-xs">Pure from happy cows</p>
+              <h3 className="text-xl sm:text-2xl font-bold mb-2">Farm Fresh Source</h3>
+              <p className="text-foreground/70 text-sm sm:text-base">Pure from happy cows</p>
             </div>
           </div>
         </section>
