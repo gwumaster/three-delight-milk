@@ -3,15 +3,17 @@
 :root {
   --background: #cfecf7;
   --foreground: #1c96c5;
-  --accent: #f7e7cf;
-  --surface: #c5811c;
+  /* --accent: #f7e7cf;
+  --surface: #c5811c; */
+  --accent:#eff5f5;
+  --surface: #4d7e80;
 }
 
 .dark {
   --background: #0e2a3e;
   --foreground: #aee3f3;
-  --accent: #3e2c0e;
-  --surface: #f3ceae;
+  --accent: #4d7e80;
+  --surface: #eff5f5;
 }
 
 .ordering {
