@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useMode } from "@/providers/mode-provider";
 import {
   FaGlassWhiskey,
   FaBox,
@@ -22,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const timelineRef = useRef<HTMLDivElement>(null);
-  const [mode, setMode] = useState<"ordering" | "delivering">("ordering");
+  const { mode } = useMode();
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [deliveryName, setDeliveryName] = useState("");
@@ -42,12 +43,6 @@ export default function Home() {
     setPhone(e.target.value);
     validatePhone(e.target.value);
   };
-
-  // Apply mode-specific class to the document root
-  useEffect(() => {
-    document.documentElement.classList.remove("ordering", "delivering");
-    document.documentElement.classList.add(mode);
-  }, [mode]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -103,7 +98,7 @@ export default function Home() {
     <>
       <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         <ThemeToggle />
-        <ModeToggle mode={mode} setMode={setMode} />
+        <ModeToggle />
 
 
         {/* Hero Section */}

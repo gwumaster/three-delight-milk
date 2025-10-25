@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "@/providers/theme-provider";
+import { ModeProvider } from "@/providers/mode-provider";
 import type { ReactNode } from "react";
 
 interface ProvidersProps {
@@ -14,8 +15,11 @@ export function Providers({ children }: ProvidersProps) {
       defaultTheme="light"
       enableSystem={false}
       disableTransitionOnChange={false}
+      storageKey="three-delight-theme"
     >
-      {children}
+      <ModeProvider>
+        {children}
+      </ModeProvider>
     </ThemeProvider>
   );
 }

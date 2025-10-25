@@ -1,13 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useMode } from "@/providers/mode-provider";
 
-interface ModeToggleProps {
-  mode: "ordering" | "delivering";
-  setMode: React.Dispatch<React.SetStateAction<"ordering" | "delivering">>;
-}
-
-export const ModeToggle: React.FC<ModeToggleProps> = ({ mode, setMode }) => {
+export const ModeToggle: React.FC = () => {
+  const { mode, setMode } = useMode();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -16,7 +13,7 @@ export const ModeToggle: React.FC<ModeToggleProps> = ({ mode, setMode }) => {
 
   if (!mounted) {
     return (
-      <div className="flex items-center justify-center gap-2 bg-background/50 px-4 py-2 mr-auto">
+      <div className="flex items-center justify-center gap-2 px-4 py-2 mr-auto">
         <div className="px-4 py-2 rounded-full font-semibold text-sm cursor-pointer">Ordering</div>
         <div className="px-4 py-2 rounded-full font-semibold text-sm cursor-pointer">Delivering</div>
       </div>
@@ -24,7 +21,7 @@ export const ModeToggle: React.FC<ModeToggleProps> = ({ mode, setMode }) => {
   }
 
   return (
-    <div className="flex items-center justify-center gap-2 bg-background/50 px-4 py-2 mr-auto">
+    <div className="flex items-center justify-center gap-2 px-4 py-2 mr-auto">
       <button
         className={`px-4 py-2 rounded-full font-semibold text-sm transition-all cursor-pointer ${
           mode === "ordering" ? "bg-foreground text-background" : "text-foreground/70"
