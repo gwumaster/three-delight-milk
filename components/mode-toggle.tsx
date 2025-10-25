@@ -14,8 +14,8 @@ export const ModeToggle: React.FC = () => {
   if (!mounted) {
     return (
       <div className="flex items-center justify-center gap-2 px-4 py-2 mr-auto">
-        <div className="px-4 py-2 rounded-full font-semibold text-sm cursor-pointer">Ordering</div>
-        <div className="px-4 py-2 rounded-full font-semibold text-sm cursor-pointer">Delivering</div>
+        <div className="px-4 py-2 rounded-full font-semibold text-md cursor-pointer">Ordering</div>
+        <div className="px-4 py-2 rounded-full font-semibold text-md cursor-pointer">Delivering</div>
       </div>
     );
   }
@@ -23,7 +23,7 @@ export const ModeToggle: React.FC = () => {
   return (
     <div className="flex items-center justify-center gap-2 px-4 py-2 mr-auto">
       <button
-        className={`px-4 py-2 rounded-full font-semibold text-sm transition-all cursor-pointer ${
+        className={`px-4 py-2 rounded-full font-semibold text-md transition-all cursor-pointer ${
           mode === "ordering" ? "bg-foreground text-background" : "text-foreground/70"
         }`}
         onClick={() => setMode("ordering")}
@@ -31,7 +31,7 @@ export const ModeToggle: React.FC = () => {
         Ordering
       </button>
       <button
-        className={`px-4 py-2 rounded-full font-semibold text-sm transition-all cursor-pointer ${
+        className={`px-4 py-2 rounded-full font-semibold text-md transition-all cursor-pointer ${
           mode === "delivering" ? "bg-foreground text-background" : "text-foreground/70"
         }`}
         onClick={() => setMode("delivering")}
